@@ -16,7 +16,7 @@ setup(
     long_description=read('README.rst'),
     url='https://github.com/alfredhq/djlint',
     author='Alfred Developers',
-    author_email='team@alfred.com',
+    author_email='team@alfredhq.com',
     packages=find_packages(exclude=['tests', 'tests.*']),
     classifiers=[
         'Development Status :: 4 - Beta',
