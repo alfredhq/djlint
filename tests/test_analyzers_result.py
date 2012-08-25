@@ -1,5 +1,5 @@
-from unittest2 import TestCase
 from djlint.analyzers.base import Result, CodeSnippet
+from unittest2 import TestCase
 
 
 class ResultTests(TestCase):

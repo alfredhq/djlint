@@ -1,9 +1,10 @@
 import os
-from unittest2 import TestCase
-from .base import TESTS_ROOT, EXAMPLE_PROJECT_FILES
 
 from djlint.analyzers.base import BaseAnalyzer
 from djlint.parsers import Parser
+
+from unittest2 import TestCase
+from .base import TESTS_ROOT, EXAMPLE_PROJECT_FILES
 
 
 class CustomAnalyzer(BaseAnalyzer):

@@ -1,7 +1,7 @@
 import ast
-
 from .base import (
-    BaseAnalyzer, Result, AttributeVisitor, ModuleVisitor, set_lineno)
+    BaseAnalyzer, Result, AttributeVisitor, ModuleVisitor, set_lineno,
+)
 
 
 class CallVisitor(ast.NodeVisitor):
@@ -67,11 +67,13 @@ class RenderToResponseAnalyzer(BaseAnalyzer):
         visitor.visit(code)
         for name, node, start, stop in visitor.get_found():
             result = Result(
-                description = (
+                description=(
                     "this %r usage case can be replaced with 'render' "
-                    "function from 'django.shortcuts' package." % name),
-                path = filepath,
-                line = start)
+                    "function from 'django.shortcuts' package." % name
+                ),
+                path=filepath,
+                line=start,
+            )
             lines = self.get_file_lines(filepath, start, stop)
             for lineno, important, text in lines:
                 result.source.add_line(lineno, text, important)

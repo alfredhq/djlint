@@ -1,9 +1,9 @@
 import os
-from unittest2 import TestCase
 
 from djlint.analyzers.generic_views import GenericViewsAnalyzer
 from djlint.parsers import Parser
 
+from unittest2 import TestCase
 from .base import TESTS_ROOT
 
 

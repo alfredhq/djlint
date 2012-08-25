@@ -1,9 +1,9 @@
 import os
-from unittest2 import TestCase
 
 from djlint.analyzers.db_backends import DB_BackendsAnalyzer
 from djlint.parsers import Parser
 
+from unittest2 import TestCase
 from .base import TESTS_ROOT
 
 

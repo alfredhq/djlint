@@ -1,5 +1,4 @@
 import ast
-
 from .base import BaseAnalyzer, Result
 
 
@@ -38,9 +37,10 @@ class ContextProcessorsAnalyzer(BaseAnalyzer):
         for name, node in visitor.found:
             propose = visitor.deprecated_items[name]
             result = Result(
-                description = DESCRIPTION.format(name=name, propose=propose),
-                path = filepath,
-                line = node.lineno)
+                description=DESCRIPTION.format(name=name, propose=propose),
+                path=filepath,
+                line=node.lineno,
+            )
             lines = self.get_file_lines(filepath, node.lineno, node.lineno)
             for lineno, important, text in lines:
                 result.source.add_line(lineno, text, important)

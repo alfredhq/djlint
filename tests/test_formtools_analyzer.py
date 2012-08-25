@@ -1,9 +1,9 @@
 import os
-from unittest2 import TestCase
 
 from djlint.analyzers.formtools import FormToolsAnalyzer
 from djlint.parsers import Parser
 
+from unittest2 import TestCase
 from .base import TESTS_ROOT
 
 

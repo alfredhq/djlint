@@ -1,9 +1,10 @@
 import os
-from unittest2 import TestCase
-from .base import TESTS_ROOT
 
 from djlint.analyzers.syntax_error import SyntaxErrorAnalyzer
 from djlint.parsers import Parser
+
+from unittest2 import TestCase
+from .base import TESTS_ROOT
 
 
 class SyntaxErrorAnalyzerTests(TestCase):
