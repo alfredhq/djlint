@@ -17,6 +17,7 @@ setup(
     url='https://github.com/alfredhq/djlint',
     author='Alfred Developers',
     author_email='team@alfred.com',
+    packages=find_packages(exclude=['tests', 'tests.*']),
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
