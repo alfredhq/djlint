@@ -1,6 +1,6 @@
 import ast
 
-from .base import BaseAnalyzer, ModuleVisitor, Result
+from .base import BaseAnalyzer, Result
 
 
 DESCRIPTION = """
