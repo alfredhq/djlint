@@ -1,6 +1,6 @@
 import ast
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 from djlint.parsers import Parser
 from .base import TESTS_ROOT, EXAMPLE_PROJECT_FILES
 

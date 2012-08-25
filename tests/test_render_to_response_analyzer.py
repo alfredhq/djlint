@@ -1,5 +1,5 @@
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 
 from djlint.analyzers.render_to_response import RenderToResponseAnalyzer
 from djlint.parsers import Parser

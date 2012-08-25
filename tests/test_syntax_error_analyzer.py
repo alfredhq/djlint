@@ -1,5 +1,5 @@
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 from .base import TESTS_ROOT
 
 from djlint.analyzers.syntax_error import SyntaxErrorAnalyzer

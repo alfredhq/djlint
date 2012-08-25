@@ -1,5 +1,5 @@
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 from .base import TESTS_ROOT, EXAMPLE_PROJECT_FILES
 
 from djlint.analyzers.base import BaseAnalyzer

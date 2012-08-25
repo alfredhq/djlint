@@ -1,5 +1,5 @@
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 
 from djlint.analyzers.template_loaders import TemplateLoadersAnalyzer
 from djlint.parsers import Parser

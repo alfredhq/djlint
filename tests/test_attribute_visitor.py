@@ -1,5 +1,5 @@
 import ast
-from unittest import TestCase
+from unittest2 import TestCase
 from djlint.analyzers.base import AttributeVisitor
 
 

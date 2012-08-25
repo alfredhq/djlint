@@ -1,5 +1,5 @@
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 
 from djlint.analyzers.db_backends import DB_BackendsAnalyzer
 from djlint.parsers import Parser

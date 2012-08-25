@@ -1,5 +1,5 @@
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 
 from djlint.analyzers.context_processors import ContextProcessorsAnalyzer
 from djlint.parsers import Parser
