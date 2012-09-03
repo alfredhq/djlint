@@ -1,5 +1,5 @@
 from djlint.analyzers.base import CodeSnippet
-from unittest2 import TestCase
+from unittest import TestCase
 
 
 class CodeSnippetTests(TestCase):
@@ -8,7 +8,7 @@ class CodeSnippetTests(TestCase):
         snippet = CodeSnippet()
         snippet.add_line(1, 'first line')
         snippet.add_line(2, 'second line', important=False)
-        self.assertItemsEqual(snippet, [
+        self.assertEqual(snippet, [
             (1, True, 'first line'),
             (2, False, 'second line'),
         ])

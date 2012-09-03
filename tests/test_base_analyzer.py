@@ -3,7 +3,7 @@ import os
 from djlint.analyzers.base import BaseAnalyzer
 from djlint.parsers import Parser
 
-from unittest2 import TestCase
+from unittest import TestCase
 from .base import TESTS_ROOT, EXAMPLE_PROJECT_FILES
 
 
@@ -46,8 +46,8 @@ class BaseAnalyzerTests(TestCase):
 
     def test_analyze_file(self):
         with self.assertRaises(NotImplementedError):
-            self.analyzer.analyze_file(*self.code_dict.items()[0])
+            self.analyzer.analyze_file(*tuple(self.code_dict.items())[0])
 
     def test_analyze(self):
         results = CustomAnalyzer(self.code_dict, self.example_project).analyze()
-        self.assertItemsEqual(list(results), EXAMPLE_PROJECT_FILES)
+        self.assertEqual(sorted(list(results)), sorted(EXAMPLE_PROJECT_FILES))

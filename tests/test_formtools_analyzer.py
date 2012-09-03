@@ -3,7 +3,7 @@ import os
 from djlint.analyzers.formtools import FormToolsAnalyzer
 from djlint.parsers import Parser
 
-from unittest2 import TestCase
+from unittest import TestCase
 from .base import TESTS_ROOT
 
 
@@ -17,7 +17,7 @@ class FormToolsAnalyzerTests(TestCase):
     def test_analyze(self):
         results = list(self.analyzer.analyze())
         self.assertEqual(len(results), 1)
-        self.assertItemsEqual(results[0].source, [
+        self.assertEqual(results[0].source, [
             (58, False, '    from django.contrib.formtools.utils import security_hash'),
             (59, False, '    form = MessageForm()'),
             (60, True,  '    hash = security_hash(request, form)'),

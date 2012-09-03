@@ -3,7 +3,7 @@ import os
 from djlint.analyzers.syntax_error import SyntaxErrorAnalyzer
 from djlint.parsers import Parser
 
-from unittest2 import TestCase
+from unittest import TestCase
 from .base import TESTS_ROOT
 
 
@@ -21,10 +21,10 @@ class SyntaxErrorAnalyzerTests(TestCase):
         self.assertEqual(result.description, 'Syntax error: invalid syntax.')
         self.assertEqual(result.path, 'syntax_error.py')
         self.assertEqual(result.line, 2)
-        self.assertItemsEqual(result.source, [
+        self.assertEqual(result.source, [
             (1, False, 'def main():'),
             (2, True,  '    syntax error'),
             (3, False, ''),
             (4, False, ''),
         ])
-        self.assertItemsEqual(result.solution, [])
+        self.assertEqual(result.solution, [])
