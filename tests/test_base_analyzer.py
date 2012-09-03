@@ -3,7 +3,7 @@ import os
 from djlint.analyzers.base import BaseAnalyzer
 from djlint.parsers import Parser
 
-from unittest2 import TestCase
+from unittest import TestCase
 from .base import TESTS_ROOT, EXAMPLE_PROJECT_FILES
 
 

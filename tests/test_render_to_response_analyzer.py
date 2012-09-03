@@ -3,7 +3,7 @@ import os
 from djlint.analyzers.render_to_response import RenderToResponseAnalyzer
 from djlint.parsers import Parser
 
-from unittest2 import TestCase
+from unittest import TestCase
 from .base import TESTS_ROOT
 
 

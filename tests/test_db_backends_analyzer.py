@@ -3,7 +3,7 @@ import os
 from djlint.analyzers.db_backends import DB_BackendsAnalyzer
 from djlint.parsers import Parser
 
-from unittest2 import TestCase
+from unittest import TestCase
 from .base import TESTS_ROOT
 
 
