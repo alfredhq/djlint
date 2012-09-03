@@ -18,14 +18,14 @@ class ContextProcessorsAnalyzerTests(TestCase):
     def test_analyze(self):
         results = list(self.analyzer.analyze())
         self.assertEqual(len(results), 3)
-        self.assertItemsEqual(results[0].source, [
+        self.assertEqual(results[0].source, [
             (18, False, ""),
             (19, False, "TEMPLATE_CONTEXT_PROCESSORS = ("),
             (20, True,  "    'django.core.context_processors.auth',"),
             (21, False, "    'django.core.context_processors.debug',"),
             (22, False, "    'django.core.context_processors.i18n',"),
         ])
-        self.assertItemsEqual(results[0].solution, [
+        self.assertEqual(results[0].solution, [
             (18, False, ""),
             (19, False, "TEMPLATE_CONTEXT_PROCESSORS = ("),
             (20, True,  "    'django.contrib.auth.context_processors.auth',"),

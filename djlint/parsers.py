@@ -33,7 +33,7 @@ class Parser(object):
             content = f.read()
         try:
             return (relpath, ast.parse(content, relpath))
-        except SyntaxError, e:
+        except SyntaxError as e:
             return (relpath, e)
 
     def parse(self):

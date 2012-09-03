@@ -20,9 +20,10 @@ class ParserTests(TestCase):
 
     def test_walk(self):
         parser = Parser(self.example_project)
-        self.assertItemsEqual(
-            parser.walk(),
-            [os.path.join(self.example_project, x) for x in EXAMPLE_PROJECT_FILES]
+        self.assertEqual(
+            sorted(list(parser.walk())),
+            sorted([os.path.join(self.example_project, x)
+                    for x in EXAMPLE_PROJECT_FILES])
         )
 
     def test_relpath(self):
@@ -54,4 +55,7 @@ class ParserTests(TestCase):
         parser = Parser(self.example_project)
         code = parser.parse()
         self.assertIsInstance(code, dict)
-        self.assertItemsEqual(parser.parse(), EXAMPLE_PROJECT_FILES)
+        self.assertEqual(
+            sorted(list(parser.parse())),
+            sorted(EXAMPLE_PROJECT_FILES)
+        )

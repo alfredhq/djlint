@@ -18,14 +18,14 @@ class TemplateLoadersAnalyzerTests(TestCase):
     def test_analyze(self):
         results = list(self.analyzer.analyze())
         self.assertEqual(len(results), 2)
-        self.assertItemsEqual(results[0].source, [
+        self.assertEqual(results[0].source, [
             (29, False, ''),
             (30, False, 'TEMPLATE_LOADERS = ('),
             (31, True,  "    'django.template.loaders.filesystem.load_template_source',"),
             (32, False, "    'django.template.loaders.app_directories.load_template_source',"),
             (33, False, ')'),
         ])
-        self.assertItemsEqual(results[0].solution, [
+        self.assertEqual(results[0].solution, [
             (29, False, ''),
             (30, False, 'TEMPLATE_LOADERS = ('),
             (31, True,  "    'django.template.loaders.filesystem.Loader',"),

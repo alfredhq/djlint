@@ -18,7 +18,7 @@ class RenderToResponseAnalyzerTests(TestCase):
         results = list(self.analyzer.analyze())
         self.assertEqual(len(results), 2)
         self.assertIn("this 'render_to_response'", results[0].description)
-        self.assertItemsEqual(results[0].source, [
+        self.assertEqual(results[0].source, [
             (39, False, 'def random_message(request):'),
             (40, False, "    message = Message.objects.order_by('?')[0]"),
             (41, True,  "    return render_to_response('messages/random.html', {'message': message},"),
@@ -26,7 +26,7 @@ class RenderToResponseAnalyzerTests(TestCase):
             (43, False, ''),
             (44, False, ''),
         ])
-        self.assertItemsEqual(results[1].source, [
+        self.assertEqual(results[1].source, [
             (46, False, 'def another_random_message(request):'),
             (47, False, "    message = Message.objects.order_by('?')[0]"),
             (48, True,  "    return render_to_response('messages/random.html', {'message': message},"),
